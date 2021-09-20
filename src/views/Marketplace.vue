@@ -41,11 +41,13 @@ export default {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
     padding-left: 3.5vw;
     padding-right: 3.5vw;
     margin: 1vw 1.5vw;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 70vh;
   }
 
   @media screen and (min-width: 1200px) {
