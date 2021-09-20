@@ -14,7 +14,7 @@ app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 // find all item in database 
 app.get('/productSerach', function (req, res) {
-    connection_js_1.connection.query('select * from mockup_data', function (error, result, field) {
+    connection_js_1.connection.query('select * from mockup_data limit 5', function (error, result, field) {
         var message = "";
         var errorMsg = false;
         if (error) {
@@ -27,7 +27,7 @@ app.get('/productSerach', function (req, res) {
         else {
             message = "Success!";
         }
-        return res.send({ error: errorMsg, data: result, message: message });
+        return res.send(result);
     });
 });
 // get data by conditons with input parameter 

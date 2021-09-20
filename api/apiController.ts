@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // find all item in database 
 app.get('/productSerach', (req, res) => {
-    connection.query('select * from mockup_data', (error, result, field) =>{
+    connection.query('select * from mockup_data limit 5', (error, result, field) =>{
         let message = "";
         let errorMsg = false;
         if(error){
@@ -27,7 +27,7 @@ app.get('/productSerach', (req, res) => {
         {
             message = "Success!";
         }
-        return res.send({ error: errorMsg, data: result, message: message});
+        return res.send(result);
     })
 }); 
 
