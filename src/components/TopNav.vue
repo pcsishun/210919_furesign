@@ -13,7 +13,7 @@
 
         <div class="router">
             <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
+            <router-link to="/marketplace">Marketplace</router-link>
         </div>
     </div>
 
@@ -22,7 +22,6 @@
     <div class="contentApp" :class="{'open':showNav}">
       <router-view/>
     </div>
-
 </template>
 
 <script>
