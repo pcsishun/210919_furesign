@@ -4,16 +4,71 @@
       <h2>ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
       <h1 style="margin-top: 0px; margin-bottom: 10px"><b>ค้นหาสินค้า</b>ผ่านคำและรูปภาพ</h1>
       <div class="search">
-        <input type="text" placeholder="Search..">
-        <button> Upload image</button>
+        <div class="upload-btn-wrapper">
+          <h4 v-if="file !=''">Your file upload</h4>
+          <p v-if="file !=''" >{{ this.file['name'] }}</p>
+          <button v-if="file !=''" class="btn">Re-upload</button>
+          <button v-if="file ===''" class="btn">Upload image</button>
+          <input  type="file" id="file"  ref="file" v-on:change="handleFileUpload" >
+        </div>
+        <div class="serach-button">
+          <button v-if="file !=''" v-on:click="submitFile">Serach</button>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import axios from 'axios';
+// import '../assets/js/cameraSet.js';
+
 export default {
-  name: 'Marketplace'
+  name: 'Marketplace',
+  el: "#app-cam",
+  components: {
+    Splide,
+    SplideSlide,
+  },
+  data:() => {
+    return {
+      options: 
+      {
+        rewind : true,
+        width  : 800,
+        gap    : '1rem',
+      },
+      isCameraOpen: false,
+      isPhotoTaken: false,
+      isShotPhoto: false,
+      isLoading: false,
+      link: '#',
+      file: "",
+
+    }
+  },
+    
+    methods: {
+      submitFile(){
+        let formData = new FormData();
+        formData.append('file', this.file); // append image file name as file in variable formData
+
+        axios.post('http://localhost:5000/single-file', 
+        formData,
+          {
+          headers: {'Content-Type': 'multipart/form-data'}
+          }
+        )
+      },
+
+      handleFileUpload(){
+        this.file = this.$refs.file.files[0];
+        console.log(this.file['name'])
+      }
+
+    }
 }
 </script>
   
@@ -95,4 +150,28 @@ export default {
       padding: min(1vw, 5px) min(2vw,10px);
       border-radius: min(1vw, 15px);
   }
+
+  .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
 </style>

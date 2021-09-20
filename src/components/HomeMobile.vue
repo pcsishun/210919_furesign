@@ -3,7 +3,7 @@
         <section>
             <h2 style="margin-bottom: 0px;">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
             <h1 style="margin-top: 0px; margin-bottom: 10px"><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
-            <button>ค้นหาสินค้า</button>
+            <button @click="$router.push({ path: 'marketplace' })">ค้นหาสินค้า</button>
             <img id="coverImg" src="../assets/cover.gif" alt="app demo">
         </section>
 
