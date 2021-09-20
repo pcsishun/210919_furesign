@@ -14,6 +14,7 @@
         <div class="serach-button">
           <button v-if="file !=''" v-on:click="submitFile">Serach</button>
         </div>
+        {{ imageList }}
       </div>
     </section>
   </div>
@@ -32,8 +33,9 @@ export default {
     Splide,
     SplideSlide,
   },
-  data:() => {
+  data(){
     return {
+      imageList: null,
       options: 
       {
         rewind : true,
@@ -48,6 +50,11 @@ export default {
       file: "",
 
     }
+  },
+  mounted(){
+    axios
+    .get("http://localhost:5000/productSerach")
+    .then(response => (this.imageList = response.data))
   },
     
     methods: {
