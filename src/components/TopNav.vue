@@ -13,7 +13,8 @@
 
         <div class="router">
             <router-link to="/">Home</router-link> |
-            <router-link to="/marketplace">Marketplace</router-link>
+            <router-link to="/marketplace">Marketplace</router-link> |
+            <a href="">Community</a>
         </div>
     </div>
 
@@ -54,6 +55,21 @@ export default {
             display: none !important;
         }
     }
+
+    .router  a {
+        font-family: "Prompt", sans-serif;
+        font-size: max(1.25vw, 18px);
+        color: #2c3e50
+    }
+
+    .router a:hover {
+        color: rgb(169, 126, 109)
+    }
+
+    .router a.router-link-exact-active {
+        color: #e0ad5b;
+    }
+
 
     .navList {
         position: relative;

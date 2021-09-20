@@ -3,8 +3,8 @@
 
         <ul>
             <li><router-link to="/" class="link-to-page">Home</router-link></li>
-            <li><router-link to="/about" class="link-to-page">About</router-link></li>
-            <li><a class="link-to-page" href="/community">COMMUNITY</a> </li>
+            <li><router-link to="/marketplace" class="link-to-page">Marketplace</router-link></li>
+            <li><a class="link-to-page" href="/community">Community</a> </li>
         </ul>
 
         <div class="socialMedia">
