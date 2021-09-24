@@ -1,8 +1,8 @@
 <template>
     <div class="homeDesktop">
         <section>
-            <h2 style="margin-bottom: 0px;">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
-            <h1 style="margin-top: 0px; margin-bottom: 10px"><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
+            <h2>ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านออนไลน์</h2>
+            <h1><b>ค้นหาง่าย</b>ทั้งไอเดียและสินค้า</h1>
             <button @click="$router.push({ path: 'marketplace' })">ค้นหาสินค้า</button>
             <img id="coverImg" src="../assets/cover.gif" alt="app demo">
         </section>
@@ -10,53 +10,67 @@
         <section>
             <table>
                 <tr>
-                    <td>
-                        <div class="topic">
-                            <img src="../assets/online-community.png">
-                            <h1><b>Idea Community</b></h1>
-                        </div>
-                            <h2>แหล่งชุมชนออนไลน์ที่รวบรวมไอเดียการแต่งพื้นที่อาศัย</h2>
+                    <td style="height: -10px">
+                        <h1 id="subH1"><b>Idea Community</b></h1>
                     </td>
                     <td>
-                        <div class="topic">
-                            <img src="../assets/shopping-cart.png">
-                            <h1><b>Online Shopping</b></h1>
+                        <h1 id="subH1"><b>Online Shopping</b></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="subTopic">
+                            <img src="../assets/idea.png">
+                            <h2 id="subH2">แหล่งชุมชนออนไลน์ที่รวบรวมไอเดียการแต่งพื้นที่อาศัย</h2>
                         </div>
-                        <h2>ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านที่ค้นหาได้ง่ายผ่านรูปภาพ</h2>
+                    </td>
+                    <td>
+                        <div class="subTopic">
+                            <img src="../assets/cart.png">
+                            <h2 id="subH2">ตลาดสินค้าเฟอร์นิเจอร์และของตกแต่งบ้านที่ค้นหาได้ง่ายผ่านรูปภาพ</h2>
+                        </div>
                     </td>
                 </tr>
             </table>
         </section>
 
         <section>
-            <h1>ทำไม? ต้องซื้อเฟอร์นิเจอร์ของตกแต่งผ่าน <b>Furesign</b></h1>
+            <h1 id="sliderH1">ทำไม? ต้องซื้อเฟอร์นิเจอร์ของตกแต่งผ่าน <b>Furesign</b></h1>
             <splide :options="options">
                 <splide-slide>
                     <div class="slideContent">
-                        <h1 style="margin-top: 0px"><b>ค้นหาสินค้าได้ง่าย</b>ผ่านคำและรูปภาพ</h1>
                         <div class="topic2">
-                            <img src="../assets/Pic2-V4_crop.gif" alt="search by image" style="width: 18vw; margin-right: 0px">
-                            <h2 style="text-align:center">ช่วยคุณค้นหาสินค้าได้ง่ายผ่านรูปภาพ โดยระบบจะค้นหาสินค้าที่เหมือนหรือใกล้เคียงกับภาพต้นแบบมากที่สุด</h2>
+                            <img src="../assets/pic2-v6-crop.gif" alt="search by image" style="width: max(22vw, 180px); margin-right: 0px">
+                            <article>
+                                <h1 id="contentH1"><b>ค้นหาสินค้าได้ง่าย</b>ผ่านคำและรูปภาพ</h1>
+                                <h2 style="text-align: left;">ช่วยคุณค้นหาสินค้าได้ง่ายผ่านรูปภาพ โดยระบบจะค้นหาสินค้าที่เหมือนหรือใกล้เคียงกับภาพต้นแบบมากที่สุด</h2>
+                                <button id="buttonSlide" @click="$router.push({ path: 'marketplace' })">ทดลองใช้</button>
+                            </article>
                         </div>
                     </div>
                 </splide-slide>
 
                 <splide-slide>
                     <div class="slideContent">
-                        <h1 style="margin-top: 0px"><b>แหล่งรวบรวมไอเดีย</b>การตกแต่งพื้นที่</h1>
                         <div class="topic2">
                             <img src="../assets/pic3-V3.png" alt="idea community">
-                            <h2 style="text-align:center">หาไอเดียการแต่งบ้านและพื้นที่ต่าง ๆ ได้ง่ายผ่านแหล่งชุมชนออนไลน์บน Furesign</h2>
+                            <article>
+                                <h1 id="contentH1"><b>แหล่งรวบรวมไอเดีย</b>การตกแต่งพื้นที่</h1>
+                                <h2 style="text-align: left">หาไอเดียการแต่งบ้านและพื้นที่ต่าง ๆ ได้ง่ายผ่านแหล่งชุมชนออนไลน์บน Furesign</h2>
+                                <button id="buttonSlide" @click="$router.push({ path: 'marketplace' })">Community</button>
+                            </article>
                         </div>
                     </div>
                 </splide-slide>
 
                 <splide-slide>
                     <div class="slideContent">
-                        <h1 style="margin-top: 0px"><b>แนะนำสินค้า</b>ที่ตรงตามไอเดียที่สนใจ</h1>
                         <div class="topic2">
                             <img src="../assets/pic4-V2.png" alt="idea recommendation">
-                            <h2 style="text-align:center;">สั่งซื้อสินค้าผ่านไอเดียที่คุณสนใจได้ง่ายผ่านระบบของ Furesign</h2>
+                            <article>
+                                <h1 id="contentH1"><b>แนะนำสินค้า</b>ที่ตรงตามไอเดียที่สนใจ</h1>
+                                <h2 style="text-align: left;">สั่งซื้อสินค้าผ่านไอเดียที่คุณสนใจได้ง่ายผ่านระบบของ Furesign</h2>
+                            </article>
                         </div>
                     </div>
                 </splide-slide>
@@ -80,7 +94,7 @@ export default {
         return {
         options: {
           rewind : true,
-          width: '80vw',
+          width: '95vw',
           gap    : '1rem',
           // autoplay: true
       }
@@ -96,14 +110,32 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: space-evenly;
+    align-content: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .topic {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.subTopic {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+.subTopic img {
+    margin-left: 0px;
+    margin-right: max(1vw, 10px);
+    border-radius: 0px;
+    width: max(3.5vw, 22px);
+    /* width: min(3.5vw, 60px); */
+    height: 100%;
 }
 
 .topic img {
@@ -119,7 +151,7 @@ export default {
 }
 
 .topic2 {
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 5vw;
     display: flex;
     justify-content: center;
@@ -128,19 +160,19 @@ export default {
 
 .topic2 h2 {
     width: 35vw;
-    font-size: min(2.5vw, 30px);
+    font-size: max(1.5vw, 12px);
+    margin-top: 0px;
 }
 
 .topic2 img {
-    width: min(13vw, 270px);
+    width: max(17vw, 130px);
     border-radius: 0px;
     margin-right: 3vw;
 }
 
 .slideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;   
+    justify-content: center;
 }
 
 .slideContent h1 {
@@ -155,11 +187,7 @@ section {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    padding-left: 3.5vw;
-    padding-right: 3.5vw;
-    margin: 1vw 1.5vw;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1vh;
 }
 
 @media screen and (min-width: 1200px) {
@@ -170,16 +198,44 @@ section {
 
 h1 {
     font-weight: 400;
-    font-size: min(3vw, 45px);
+    font-size: max(3.15vw, 26px);
+    /* font-size: min(3.15vw, 52px); */
+    margin-top: 0px; 
+    margin-bottom: 10px;
+}
+
+#subH1 {
+    font-size: max(1.68vw, 15px);
+    /* font-size: min(1.23vw, 28px); */
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#sliderH1 {
+    font-size: max(2.6vw, 20px);
 }
 
 h2 {
     font-weight: 400;
-    font-size: min(2.5vw, 36px);
+    font-size: max(1.58vw, 13px);
+    /* font-size: min(1.58vw, 26px);   */
+    margin-bottom: 0px;
+}
+
+#subH2 {
+    font-size: max(1.23vw, 12px);
+    /* font-size: min(1.23vw, 20px); */
+    text-align: left; 
+    margin-top: 0px;
+}
+
+#contentH1 {
+    margin-top: 0px; 
+    font-size: max(2.4vw, 15px)
 }
 
 b {
-    font-weight: 500;
+    font-weight: 700;
     color: rgb(169, 126, 109);
 }
 
@@ -193,12 +249,52 @@ img {
 }
 
 button {
-    background-color: rgb(169, 126, 109);
+    background-color: rgb(169 127 109);
+    border: none;
     color: white;
-    font-size: min(2.5vw, 36px);
+    font-size: max(1.4vw, 12px);
+    /* font-size: min(1.4vw, 23.6px); */
     font-family: 'Prompt', sans-serif;
-    padding: min(1vw, 5px) min(2vw,10px);
-    border-radius: min(1vw, 15px);
+    padding-top: max(0.3vw, 2.5px); 
+    padding-bottom: max(0.3vw, 2.5px);
+    padding-left: max(1.75vw, 15px);
+    padding-right: max(1.75vw, 15px);
+    border-radius: 100px;
+}
+
+button:active {
+    background-color: rgb(154 107 88);
+}
+
+#buttonSlide {
+    margin-top: 2vh;
+    padding-top: max(1vw, 7.5px); 
+    padding-bottom: max(1vw, 7.5px);
+    padding-left: max(2.5vw, 17.5px);
+    padding-right: max(2.5vw, 17.5px);
+}
+
+table {
+    margin-bottom: 1.5vh;
+    table-layout: fixed;
+    width: max(65vw, 350px);
+}
+
+@media screen and (max-width: 340px) {
+table {
+    width: max(65vw, 280px);
+}
+}
+
+td {
+    padding-left: max(1.5vw, 2px);
+    padding-right: max(1.5vw, 2px);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 </style>
